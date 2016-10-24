@@ -33,8 +33,7 @@ Module.register('MMM-Fish', {
                 {'id':'tuna','name':'Tuna'},
                 {'id':'turbot','name':'Turbot'}
                 ],
-        //interval:   3600000 // Every 60 mins
-        interval:   300000 // Every 5 mins
+        interval:   3600000 // Every 60 mins
         },
 
 
@@ -52,7 +51,7 @@ Module.register('MMM-Fish', {
     		Log.info("Starting module: " + this.name);
 
     		this.lastFish = -1;
-            
+
             var date = new Date;
             this.day = date.getDay();
 
