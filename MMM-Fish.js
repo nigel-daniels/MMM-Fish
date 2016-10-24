@@ -33,7 +33,8 @@ Module.register('MMM-Fish', {
                 {'id':'tuna','name':'Tuna'},
                 {'id':'turbot','name':'Turbot'}
                 ],
-        interval:   3600000 // Every 60 mins
+        //interval:   3600000 // Every 60 mins
+        interval:   300000 // Every 5 mins
         },
 
 
@@ -51,7 +52,9 @@ Module.register('MMM-Fish', {
     		Log.info("Starting module: " + this.name);
 
     		this.lastFish = -1;
-            this.day = -1;
+            
+            var date = new Date;
+            this.day = date.getDay();
 
     		// Schedule update timer.
     		var that = this;
@@ -82,7 +85,8 @@ Module.register('MMM-Fish', {
             var date = new Date;
             var day = date.getDay();
 
-            if (day != this.day) {
+            console.log('day: ' + day + ', this.day:' + this.day);
+            if (day !== this.day) {
                 this.day = day;
                 this.updateDom(4000);
             }
