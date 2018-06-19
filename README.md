@@ -1,4 +1,6 @@
 # MMM-Fish
+![Fish of the day](fish.png "Fish of the day.")
+
 This is a module for the [MagicMirror](https://github.com/MichMich/MagicMirror/tree/develop). This module shows the fish of the day.
 
 ## Installation
