@@ -1,7 +1,14 @@
 .fish {
+    display: inline-block;
     text-align: center;
 }
 
 .fishPic {
+    vertical-align: middle;
     margin-right: 20px;
+}
+
+.fishName {
+    display: inline-block;
+    vertical-align: middle;
 }
