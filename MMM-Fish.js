@@ -100,7 +100,10 @@ Module.register('MMM-Fish', {
             var fishName = fish.name;
 
     		var wrapper = document.createElement('div');
-    		wrapper.className = "bright fish";
+    		wrapper.className = "bright fishTank";
+
+			var fishDiv = document.createElement('div');
+			fishDiv.className = "fish";
 
             var image = document.createElement('img');
             image.className = 'fishPic';
@@ -110,8 +113,10 @@ Module.register('MMM-Fish', {
             name.className = 'fishName';
             name.innerHTML = fishName;
 
-            wrapper.appendChild(image);
-    		wrapper.appendChild(name);
+            fishDiv.appendChild(image);
+    		fishDiv.appendChild(name);
+
+			wrapper.appendChild(fishDiv);
 
     		return wrapper;
     	}

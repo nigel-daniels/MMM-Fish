@@ -1,6 +1,9 @@
+.fishTank {
+    text-align: center;
+}
+
 .fish {
     display: inline-block;
-    text-align: center;
 }
 
 .fishPic {
