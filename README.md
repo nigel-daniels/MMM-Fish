@@ -7,14 +7,18 @@ This is a module for the [MagicMirror](https://github.com/MichMich/MagicMirror/t
 1. Navigate into your MagicMirror's `modules` folder and execute `git clone https://github.com/nigel-daniels/MMM-Fish`.  A new folder `MMM-Fish` will appear.
 
 ## Config
-The entry in `config.js` is simple and has no options.
+The entry in `config.js` has only one option. 
+You can change between English (default) and German names. 
 
 Here is an example of an entry in `config.js`
 ```
 {
     module:		'MMM-Fish',
     header:		'Fish of the Day',
-    position:	'top_left'
+    position:	'top_left',
+    config: {
+        language: 'german'
+    }
 },
 ```
 
