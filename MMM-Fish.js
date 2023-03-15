@@ -9,31 +9,32 @@ Module.register('MMM-Fish', {
 
 
     defaults: {
-        fish:   [
-                {'id':'anchovy','name':'Anchovy'},
-                {'id':'cod','name':'Cod'},
-                {'id':'dogfish','name':'Dogfish'},
-                {'id':'eel','name':'Eel'},
-                {'id':'haddock','name':'Haddock'},
-                {'id':'halibut','name':'Halibut'},
-                {'id':'herring','name':'Herring'},
-                {'id':'mackerel','name':'Mackerel'},
-                {'id':'monkfish','name':'Monkfish'},
-                {'id':'mullet','name':'Mullet'},
-                {'id':'plaice','name':'Plaice'},
-                {'id':'red_snapper','name':'Red Snapper'},
-                {'id':'salmon','name':'Salmon'},
-                {'id':'sardine','name':'Sardine'},
-                {'id':'sea_bass','name':'Sea Bass'},
-                {'id':'sea_bream','name':'Sea Bream'},
-                {'id':'skate','name':'Skate'},
-                {'id':'sole','name':'Sole'},
-                {'id':'swordfish','name':'Swordfish'},
-                {'id':'trout','name':'Trout'},
-                {'id':'tuna','name':'Tuna'},
-                {'id':'turbot','name':'Turbot'}
-                ],
-        interval:   3600000 // Every 60 mins
+        fish: [
+            {'id': 'anchovy', 'englishName': 'Anchovy', 'germanName': 'Sardelle'},
+            {'id': 'cod', 'englishName': 'Cod', 'germanName': 'Kabeljau'},
+            {'id': 'dogfish', 'englishName': 'Dogfish', 'germanName': 'Hundshai'},
+            {'id': 'eel', 'englishName': 'Eel', 'germanName': 'Aal'},
+            {'id': 'haddock', 'englishName': 'Haddock', 'germanName': 'Schellfisch'},
+            {'id': 'halibut', 'englishName': 'Halibut', 'germanName': 'Heilbutt'},
+            {'id': 'herring', 'englishName': 'Herring', 'germanName': 'Hering'},
+            {'id': 'mackerel', 'englishName': 'Mackerel', 'germanName': 'Makrele'},
+            {'id': 'monkfish', 'englishName': 'Monkfish', 'germanName': 'Seeteufel'},
+            {'id': 'mullet', 'englishName': 'Mullet', 'germanName': 'Meeräsche'},
+            {'id': 'plaice', 'englishName': 'Plaice', 'germanName': 'Scholle'},
+            {'id': 'red_snapper', 'englishName': 'Red Snapper', 'germanName': 'Rotbarsch'},
+            {'id': 'salmon', 'englishName': 'Salmon', 'germanName': 'Lachs'},
+            {'id': 'sardine', 'englishName': 'Sardine', 'germanName': 'Sardine'},
+            {'id': 'sea_bass', 'englishName': 'Sea Bass', 'germanName': 'Wolfsbarsch'},
+            {'id': 'sea_bream', 'englishName': 'Sea Bream', 'germanName': 'Meerbrasse'},
+            {'id': 'skate', 'englishName': 'Skate', 'germanName': 'Rochen'},
+            {'id': 'sole', 'englishName': 'Sole', 'germanName': 'Seezunge'},
+            {'id': 'swordfish', 'englishName': 'Swordfish', 'germanName': 'Schwertfisch'},
+            {'id': 'trout', 'englishName': 'Trout', 'germanName': 'Forelle'},
+            {'id': 'tuna', 'englishName': 'Tuna', 'germanName': 'Thunfisch'},
+            {'id': 'turbot', 'englishName': 'Turbot', 'germanName': 'Steinbutt'}
+        ],
+        interval:   3600000, // Every 60 mins
+        language: 'english'
         },
 
 
@@ -97,7 +98,10 @@ Module.register('MMM-Fish', {
     		var fish = this.randomFish();
 
     		var id = fish.id;
-            var fishName = fish.name;
+            var fishName = fish.englishName;
+            if (this.config.language === 'german') {
+                fishName = fish.germanName;
+            }
 
     		var wrapper = document.createElement('div');
     		wrapper.className = "bright fishTank";
